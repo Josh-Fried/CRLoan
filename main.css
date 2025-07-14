@@ -11,8 +11,15 @@
 	--main-background-color: #f4ece2;
 	--main-text-color: #212931;
 	--secondary-color: #eeeeee;
-	--hover-color: #18bfef;
+	--hover-color: #EAAA00;
 	--green-color: #166534;
+
+    --primary-color:    #166534; /* Green */
+    --secondary-color:  #EAAA00; /* Gold */
+    --background-color: #F4ECE2; /* Sand */
+    --accent-color:     #EAAA00; /* Gold */
+    --text-color:       #212931; /* Charcoal */
+    --neutral-color:    #FFFFFF; /* White */
 }
 
 html, body, div, span, applet, object,
@@ -4025,4 +4032,4 @@ body.is-preload #about {
     }
 }
 
-3,739 sq ft
+/* 3,739 sq ft */
