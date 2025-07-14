@@ -2686,6 +2686,10 @@ input, select, textarea {
 
 		.image.bar.parallax {
             background-attachment: fixed;
+			display: flex;
+			flex-direction: column;
+			justify-content: center; /* Centers content vertically */
+			align-items: center;    /* Centers content horizontally */
 			
 		}
 
@@ -2698,6 +2702,10 @@ input, select, textarea {
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Makes text pop */
             padding: 0 20px; /* Prevents text from touching screen edges */
         }
+
+		.image.bar h2, p {
+			color: white;
+		}
 
 
 		.image.fit {
@@ -7557,4 +7565,9 @@ body.is-preload #about {
 	.product-card {
 		flex-basis: 100%; /* Full width for single column */
 	}
+}
+
+#parallax-image {
+	padding-left: 0;
+	padding-right: 0;
 }
