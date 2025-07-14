@@ -2083,7 +2083,7 @@ input, select, textarea {
 		border-color: var(--secondary-color);
 	}
 
-/* Button */
+/* Button
 
 
 	input[type="submit"],
@@ -2260,7 +2260,7 @@ input, select, textarea {
 			button.primary:hover,
 			.button.primary:hover {
 				background-color: var(--hover-color);
-			}
+			} */
 
 /* Form */
 
@@ -3720,7 +3720,7 @@ input, select, textarea {
 
 			#intro a:hover {
 				border-bottom-color: transparent;
-				color: var(--hover-color) !important;
+				color: var(--hover-color);
 			}
 
 		#intro strong, #intro b {
@@ -3760,7 +3760,7 @@ input, select, textarea {
 			#intro input[type="button"]:hover,
 			#intro button:hover,
 			#intro .button:hover {
-				box-shadow: inset 0 0 0 2px var(--hover-color);
+				box-shadow: inset 0 0 0 2px var(--hover-color); 
 				color: var(--hover-color);
 			}
 
@@ -3783,13 +3783,15 @@ input, select, textarea {
 				}
 
 		#intro h1 {
-			font-size: 5rem;
+			font-size: 3rem;
+			font-family: Arial, Helvetica, sans-serif;
 			line-height: 1;
 		}
 
 		#intro p {
 			font-size: 1.25rem;
-			font-style: italic;
+			/* font-style: italic; */
+			font-family: Arial, Helvetica, sans-serif;
 			margin-top: -0.25rem;
 			text-align: center;
 		}
@@ -3871,7 +3873,8 @@ input, select, textarea {
 			}
 
 				#intro h1 {
-					font-size: 3.25rem;
+					font-size: 2rem;
+					font-family: Arial, Helvetica, sans-serif;
 					line-height: 1.1;
 					margin-bottom: 1rem;
 				}
@@ -7140,4 +7143,175 @@ body.is-preload #about {
 	transform: translateY(-50%);
 	font-size: 1.2rem; /* Increased icon size */
 	color: #a0a0a0;
+}
+
+/* The button styling */
+.prequal-button {
+	/* Background and Text Color */
+	background-color: #89CFF0; /* A nice light blue */
+	color: white;
+
+	/* Shape and Size */
+	border: none;
+	border-radius: 50px; /* This creates the oval shape */
+	padding: 12px 35px; /* Adjusts the height and width. More horizontal padding makes it longer. */
+	
+	/* Font and Text */
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	white-space: nowrap; /* Prevents the text from wrapping */
+
+	/* Effects */
+	cursor: pointer; /* Changes the cursor to a pointer on hover */
+	transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effects */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Hover effect to make the button interactive */
+.prequal-button:hover {
+	background-color: #6CB4EE; /* A slightly darker blue on hover */
+	transform: translateY(-2px); /* Lifts the button slightly on hover */
+}
+
+/* Section Container */
+.why-us-section {
+	max-width: 1280px; /* Equivalent to max-w-7xl */
+	margin-left: auto;
+	margin-right: auto;
+	padding: 48px 16px; /* py-12 px-4 */
+}
+
+/* Main Layout Grid */
+.main-layout {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+	gap: 64px; /* lg:gap-x-16 */
+}
+
+/* Left Column: Text Content */
+.text-content {
+	flex: 2; /* Takes up 2/5 of the space */
+	min-width: 300px; /* Prevents it from getting too squished */
+	text-align: left;
+}
+
+.text-content h2 {
+	font-size: 2.25rem; /* text-4xl */
+	line-height: 2.5rem;
+	font-weight: 700; /* font-bold */
+	color: #111827; /* text-gray-900 */
+}
+
+.text-content p {
+	margin-top: 1rem; /* mt-4 */
+	font-size: 1rem; /* text-base */
+	line-height: 1.625; /* leading-relaxed */
+	color: #4B5563; /* text-gray-600 */
+}
+
+/* Right Column: 2x2 Grid */
+.features-grid-container {
+	flex: 3; /* Takes up 3/5 of the space */
+	min-width: 300px;
+}
+
+.features-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr); /* sm:grid-cols-2 */
+	gap: 32px; /* gap-8 */
+}
+
+/* Grid Item Styling */
+.feature-item {
+	background-color: #ffffff;
+	border-radius: 0.5rem; /* rounded-lg */
+	padding: 24px; /* p-6 */
+	/* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);  */
+	transition: all 0.3s ease-in-out;
+	/* Flexbox for icon-text alignment */
+	display: flex;
+	align-items: flex-start; /* Aligns items to the top */
+	gap: 16px; /* Creates space between icon and text */
+}
+
+.feature-item:hover {
+	transform: translateY(-4px); /* hover:-translate-y-1 */
+	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1); /* hover:shadow-xl */
+}
+
+/* Icon Wrapper and SVG Styling */
+.icon-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 48px; /* w-12 */
+	height: 48px; /* h-12 */
+	border-radius: 9999px; /* rounded-full */
+	flex-shrink: 0; /* Prevents icon from shrinking */
+}
+
+.icon-wrapper svg {
+	width: 24px; /* w-6 */
+	height: 24px; /* h-6 */
+}
+
+/* Icon Color Variants */
+
+.icon-wrapper i {
+    font-size: 24px; /* Sets the icon size */
+}
+
+.icon-wrapper.bg-blue { background-color: #DBEAFE; } /* bg-blue-100 */
+.icon-wrapper.bg-blue i { color: #2563EB; }
+
+.icon-wrapper.bg-green { background-color: #D1FAE5; } /* bg-green-100 */
+.icon-wrapper.bg-green i { color: #059669; }
+
+.icon-wrapper.bg-purple { background-color: #E9D5FF; } /* bg-purple-100 */
+.icon-wrapper.bg-purple i { color: #7E22CE; }
+
+.icon-wrapper.bg-yellow { background-color: #FEF3C7; } /* bg-yellow-100 */
+.icon-wrapper.bg-yellow i { color: #D97706; }
+
+.feature-item h3 {
+	margin-top: 0; /* Removed top margin */
+	font-size: 1.25rem; /* text-xl */
+	font-weight: 600; /* font-semibold */
+	color: #111827; /* text-gray-900 */
+}
+
+.feature-item p {
+	margin-top: 8px; /* mt-2 */
+	font-size: 1rem; /* text-base */
+	color: #4B5563; /* text-gray-600 */
+}
+
+/* Responsive Adjustments */
+
+/* For tablet sizes and below */
+@media (max-width: 1024px) {
+	.main-layout {
+		flex-direction: column;
+		gap: 48px; /* gap-y-12 */
+	}
+	.text-content {
+		text-align: center;
+	}
+}
+
+/* For mobile sizes */
+@media (max-width: 640px) {
+	.features-grid {
+		grid-template-columns: 1fr; /* Stack grid items */
+	}
+	.text-content h2 {
+		font-size: 1.875rem; /* text-3xl */
+		line-height: 2.25rem;
+	}
+	.why-us-section {
+		padding-top: 32px;
+		padding-bottom: 32px;
+	}
 }
