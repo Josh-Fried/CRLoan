@@ -10,10 +10,12 @@
 :root {
 	--main-background-color: #f4ece2;
 	--main-background-color: #FFF;
+	--main-background-color: #F9FAFB;
 	--main-text-color: #212931;
 	--secondary-color: #eeeeee;
 	--hover-color: #18bfef;
 	--green-color: #166534;
+	--primary-blue : #3B82F6;
 
 	--rough-nav-bar-height: 79px;
 }
@@ -7309,5 +7311,140 @@ body.is-preload #about {
 	#why-work-with-us {
 		padding-top: 32px;
 		padding-bottom: 32px;
+	}
+}
+
+/* Section Container */
+#our-process {
+	padding: 64px 16px; 
+	background-color: #F9FAFB; /* Light gray background */
+}
+
+.process-container {
+	max-width: 1024px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Section Header */
+.section-header {
+	text-align: center;
+	margin-bottom: 48px;
+}
+
+.section-header h2 {
+	font-size: 2.25rem;
+	font-weight: 700;
+	color: #111827;
+}
+
+.section-header p {
+	margin-top: 1rem;
+	font-size: 1rem;
+	color: #4B5563;
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Timeline Container */
+.timeline {
+	position: relative;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+/* The vertical line */
+.timeline::after {
+	content: '';
+	position: absolute;
+	width: 3px;
+	background-color: #DBEAFE; /* Light blue */
+	top: 0;
+	bottom: 0;
+	left: 50%;
+	margin-left: -1.5px;
+	z-index: 1;
+}
+
+/* Step Item Container */
+.step-container {
+	padding: 10px 40px;
+	position: relative;
+	background-color: inherit;
+	width: 50%;
+}
+
+/* Position left/right containers */
+.step-container.left {
+	left: 0;
+}
+
+.step-container.right {
+	left: 50%;
+}
+
+/* The circle on the timeline */
+.step-container::after {
+	content: '';
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	right: -12px;
+	background-color: white;
+	border: 4px solid #3B82F6; /* Blue */
+	top: 30px;
+	border-radius: 50%;
+	z-index: 2;
+}
+
+.step-container.right::after {
+	left: -12px;
+}
+
+/* Content box for each step */
+.step-content {
+	padding: 24px;
+	background-color: white;
+	position: relative;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+.step-content .step-icon {
+	font-size: 2rem;
+	color: var(--primary-blue); 
+}
+
+.step-content h3 {
+	margin-top: 0;
+	font-size: 1.25rem;
+	font-weight: 600;
+}
+
+.step-content p {
+	font-size: 0.9rem;
+	line-height: 1.5;
+	color: #4B5563;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+	.timeline::after {
+		left: 31px;
+	}
+
+	.step-container {
+		width: 100%;
+		padding-left: 70px;
+		padding-right: 25px;
+	}
+
+	.step-container.left, .step-container.right {
+		left: 0%;
+	}
+
+	.step-container.left::after, .step-container.right::after {
+		left: 19px;
 	}
 }
