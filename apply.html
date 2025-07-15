@@ -6,21 +6,15 @@
     <title>Apply for a Loan</title>
     <!-- <link rel="stylesheet" href="main.css">  -->
     <style>
-        /* Styles now use GENERIC variable names with NO fallbacks */
-
+        /* All color definitions have been moved to main.css */
         :root {
-            --main-background-color: #f4ece2;
-            --main-text-color: #212931;
-            --secondary-color: #eeeeee;
-            --hover-color: #EAAA00;
-            --green-color: #166534;
-
-            --primary-color:    #307351; /* Dark spring green */
-            --secondary-color:  #2AB8C7; /* Moonstone */
-            --accent-color:     #2AB8C7; /* Moonstone */
-            --text-color:       #3D2924; /* Bistre */
-            --background-color: #E7DFC6; /* Pearl */
-            --neutral-color:    #FFFFFF; /* White */
+            --background-color: #F9FAFB;      /* Light Grey */
+            --dark-background-color: #a4a8ad; /* Dark Grey */
+            --text-color:       #212931;      /* Black */
+            --primary-color:    #3B82F6;      /* Blue */
+            --secondary-color:  #3B82F6;      /* Blue for progress bar/borders */
+            --accent-color:     #2563EB;      /* Darker blue for hover/accent */
+            --neutral-color:    #FFFFFF;      /* White for form container */
         }
         body {
             font-family: Arial, sans-serif;
@@ -39,7 +33,7 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .header h1, .form-section h2 {
-            color: var(--primary-color);
+            color: var(--text-color);
             margin-bottom: 15px;
         }
         .progress-bar {
@@ -51,7 +45,7 @@
         .progress-bar-fill {
             height: 10px;
             width: 0%;
-            background-color: var(--secondary-color); /* Using secondary color for progress */
+            background-color: var(--secondary-color);
             border-radius: .25rem;
             transition: width 0.4s ease-in-out;
         }
@@ -61,7 +55,7 @@
             border-radius: 4px;
             margin-top: 20px; 
             margin-bottom: 15px; 
-            border-left: 4px solid var(--secondary-color); /* Using secondary color for border accent */
+            border-left: 4px solid var(--secondary-color);
         }
         .btn {
             display: inline-block;
@@ -69,6 +63,7 @@
             background-color: var(--primary-color);
             color: var(--neutral-color);
             padding: 10px 20px;
+            margin: 0 5px;
             border: 2px solid var(--primary-color);
             border-radius: 4px;
             cursor: pointer;
@@ -88,7 +83,22 @@
             background-color: var(--primary-color);
             color: var(--neutral-color);
         }
-        /* Unchanged structural styles below */
+        .container .header::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -100px;
+            width: 400px;
+            height: 250px;
+            z-index: -1; /* Puts it behind the "Let's get started" text */
+            
+            /* Use a very faint version of the secondary color for the slash */
+            background-color: var(--secondary-color);
+            opacity: 0.15;
+            
+            /* This creates the diagonal slant */
+            transform: skewX(-25deg);
+        }
         .form-section { margin-bottom: 20px; }
         .form-group { margin-bottom: 15px; }
         .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
@@ -110,8 +120,7 @@
         <div class="alert alert-warning">PLEASE NOTE THAT IF YOU EXIT OUT OF THIS FORM WITHOUT SAVING, ALL INFORMATION ENTERED WILL BE LOST & YOU WILL HAVE TO START OVER</div>
         <form id="loan-application-form">
             <div class="form-section">
-                 <h2>Save and Continue Later</h2>
-                <p>In order to save this application and access it at a later time you need to select the 'Save & Continue Later' button at the bottom of any page. We need a valid email to send a link that will direct you back to this application. Please enter a valid email below and click 'Verify Email'.</p>
+                <p class="alert alert-warning">In order to save this application and access it at a later time you need to select the 'Save & Continue Later' button at the bottom of any page. We need a valid email to send a link that will direct you back to this application. Please enter a valid email below and click 'Verify Email'.</p>
                 <div class="form-group"><label for="guarantor-email">Guarantor Email*</label><input type="email" id="guarantor-email" name="guarantorEmail" placeholder="example@example.com" required><div class="error-message hidden">This field is required.</div></div>
                  <button class="btn" type="button" onclick="verifyEmail()">Verify Email</button>
             </div>
