@@ -1,189 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apply for a Loan</title>
-    <!-- <link rel="stylesheet" href="main.css">  -->
-    <style>
-        /* All color definitions have been moved to main.css */
-        :root {
-            --background-color: #F9FAFB;      /* Light Grey */
-            --dark-background-color: #a4a8ad; /* Dark Grey */
-            --text-color:       #212931;      /* Black */
-            --primary-color:    #3B82F6;      /* Blue */
-            --secondary-color:  #3B82F6;      /* Blue for progress bar/borders */
-            --accent-color:     #2563EB;      /* Darker blue for hover/accent */
-            --neutral-color:    #FFFFFF;      /* White for form container */
-        }
-        body {
-            font-family: Arial, sans-serif;
-            background-color: var(--background-color); 
-            color: var(--text-color);
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: var(--neutral-color);
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .header h1, .form-section h2 {
-            color: var(--text-color);
-            margin-bottom: 15px;
-        }
-        .progress-bar {
-            width: 100%;
-            background-color: #e0e0e0;
-            border-radius: .25rem;
-            margin-bottom: 20px;
-        }
-        .progress-bar-fill {
-            height: 10px;
-            width: 0%;
-            background-color: var(--secondary-color);
-            border-radius: .25rem;
-            transition: width 0.4s ease-in-out;
-        }
-        .loan-product-description {
-            padding: 15px;
-            background-color: var(--neutral-color); 
-            border-radius: 4px;
-            margin-top: 20px; 
-            margin-bottom: 15px; 
-            border-left: 4px solid var(--secondary-color);
-        }
-        .btn {
-            display: inline-block;
-            font-weight: bold;
-            background-color: var(--primary-color);
-            color: var(--neutral-color);
-            padding: 10px 20px;
-            margin: 0 5px;
-            border: 2px solid var(--primary-color);
-            border-radius: 4px;
-            cursor: pointer;
-            text-align: center;
-            transition: background-color 0.2s, color 0.2s;
-        }
-        .btn:hover {
-            background-color: var(--accent-color);
-            border-color: var(--accent-color);
-        }
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
-        }
-        .btn-secondary:hover {
-            background-color: var(--primary-color);
-            color: var(--neutral-color);
-        }
-        .container .header::before {
-            content: '';
-            position: absolute;
-            top: -50px;
-            left: -100px;
-            width: 400px;
-            height: 250px;
-            z-index: -1; /* Puts it behind the "Let's get started" text */
-            
-            /* Use a very faint version of the secondary color for the slash */
-            background-color: var(--secondary-color);
-            opacity: 0.15;
-            
-            /* This creates the diagonal slant */
-            transform: skewX(-25deg);
-        }
-        .form-section { margin-bottom: 20px; }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
-        .form-group input, .form-group select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
-        .form-group input:focus, .form-group select:focus { border-color: var(--primary-color); outline: none; box-shadow: 0 0 0 2px color-mix(in srgb, var(--primary-color) 20%, transparent); }
-        .form-group input.error, .form-group select.error { border-color: #dc3545; }
-        .loan-product-description h3 { margin-top: 0; color: var(--text-color); }
-        .error-message { color: #dc3545; font-size: 0.875em; margin-top: 4px; }
-        .alert { padding: 15px; margin-bottom: 20px; border: 1px solid transparent; border-radius: 4px; }
-        .alert-warning { color: #856404; background-color: #fff3cd; border-color: #ffeeba; }
-        .hidden { display: none; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header"><h1>Let's get started.</h1><p>Please complete the application below.</p></div>
-        <div class="progress-bar"><div class="progress-bar-fill"></div></div>
-        <p id="completion-counter" style="text-align:center;">Required Fields Complete: 0 / 0</p>
-        <div class="alert alert-warning">PLEASE NOTE THAT IF YOU EXIT OUT OF THIS FORM WITHOUT SAVING, ALL INFORMATION ENTERED WILL BE LOST & YOU WILL HAVE TO START OVER</div>
-        <form id="loan-application-form">
-            <div class="form-section">
-                <p class="alert alert-warning">In order to save this application and access it at a later time you need to select the 'Save & Continue Later' button at the bottom of any page. We need a valid email to send a link that will direct you back to this application. Please enter a valid email below and click 'Verify Email'.</p>
-                <div class="form-group"><label for="guarantor-email">Guarantor Email*</label><input type="email" id="guarantor-email" name="guarantorEmail" placeholder="example@example.com" required><div class="error-message hidden">This field is required.</div></div>
-                 <button class="btn" type="button" onclick="verifyEmail()">Verify Email</button>
+	<head>
+		<title>CR Loan</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+		<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+		<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+		<link rel="shortcut icon" href="/favicon/favicon.ico" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+		<link rel="manifest" href="/favicon/site.webmanifest" />
+
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="slick-1.8.1/slick/slick.css" />
+		<link rel="stylesheet" href="slick-1.8.1/slick/slick-theme.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="form">
+        <div class="container">
+            <div class="header"><h1>Let's get started.</h1><p>Please complete the application below.</p></div>
+            <div class="progress-bar"><div class="progress-bar-fill"></div></div>
+            <p id="completion-counter" style="text-align:center;">Required Fields Complete: 0 / 0</p>
+            <div class="alert alert-warning">PLEASE NOTE THAT IF YOU EXIT OUT OF THIS FORM WITHOUT SAVING, ALL INFORMATION ENTERED WILL BE LOST & YOU WILL HAVE TO START OVER</div>
+            <form id="loan-application-form">
+                <div class="form-section">
+                    <p class="alert alert-warning">In order to save this application and access it at a later time you need to select the 'Save & Continue Later' button at the bottom of any page. We need a valid email to send a link that will direct you back to this application. Please enter a valid email below and click 'Verify Email'.</p>
+                    <div class="form-group"><label for="guarantor-email">Guarantor Email*</label><input type="email" id="guarantor-email" name="guarantorEmail" placeholder="example@example.com" required><div class="error-message hidden">This field is required.</div></div>
+                    <button class="btn" type="button" onclick="verifyEmail()">Verify Email</button>
+                </div>
+                <div class="form-section">
+        <div class="form-group">
+            <label for="interest">I am interested in:*</label>
+            <div class="select-container">
+                <select id="interest" name="interest" onchange="updateDynamicFields()" required>
+                    <option value="">Please Select</option><option value="purchase">Purchase</option><option value="refinance">Refinance</option><option value="cash-outRefinance">Cash-Out Refinance</option>
+                </select>
             </div>
-            <div class="form-section">
-                <div class="form-group">
-                    <label for="interest">I am interested in:*</label>
-                    <select id="interest" name="interest" onchange="updateDynamicFields()" required>
-                        <option value="">Please Select</option><option value="purchase">Purchase</option><option value="refinance">Refinance</option><option value="cash-outRefinance">Cash-Out Refinance</option>
-                    </select>
-                    <div class="error-message hidden">This field is required.</div>
+            <div class="error-message hidden">This field is required.</div>
+        </div>
+        <div id="purchase-fields" class="hidden">
+            <div class="form-group"><label for="purchase-price">Estimated Property Purchase Price $*</label><input type="text" id="purchase-price" name="purchasePrice"><div class="error-message hidden">This field is required.</div></div>
+            <div class="form-group"><label for="down-payment">Down Payment $*</label><input type="text" id="down-payment" name="downPayment"><div class="error-message hidden">This field is required.</div></div>
+        </div>
+        <div id="refinance-fields" class="hidden">
+            <div class="form-group"><label for="home-value">Estimate Value of Your Home or Lot $*</label><input type="text" id="home-value" name="homeValue"><div class="error-message hidden">This field is required.</div></div>
+            <div class="form-group"><label for="loan-amount">Loan Amount $*</label><input type="text" id="loan-amount" name="loanAmount"><div class="error-message hidden">This field is required.</div></div>
+            <div class="form-group">
+                <label for="original-purchase">How did you originally purchase this home or lot?*</label>
+                <div class="select-container">
+                    <select id="original-purchase" name="originalPurchase"><option value="">Please Select</option><option value="cash">Cash</option><option value="loan">Loan</option></select>
                 </div>
-                <div id="purchase-fields" class="hidden">
-                    <div class="form-group"><label for="purchase-price">Estimated Property Purchase Price $*</label><input type="text" id="purchase-price" name="purchasePrice"><div class="error-message hidden">This field is required.</div></div>
-                    <div class="form-group"><label for="down-payment">Down Payment $*</label><input type="text" id="down-payment" name="downPayment"><div class="error-message hidden">This field is required.</div></div>
-                </div>
-                 <div id="refinance-fields" class="hidden">
-                    <div class="form-group"><label for="home-value">Estimate Value of Your Home or Lot $*</label><input type="text" id="home-value" name="homeValue"><div class="error-message hidden">This field is required.</div></div>
-                    <div class="form-group"><label for="loan-amount">Loan Amount $*</label><input type="text" id="loan-amount" name="loanAmount"><div class="error-message hidden">This field is required.</div></div>
-                     <div class="form-group">
-                        <label for="original-purchase">How did you originally purchase this home or lot?*</label>
-                        <select id="original-purchase" name="originalPurchase"><option value="">Please Select</option><option value="cash">Cash</option><option value="loan">Loan</option></select>
-                         <div class="error-message hidden">This field is required.</div>
-                    </div>
-                </div>
-                 <div id="property-details-fields" class="hidden">
-                     <div class="form-group">
-                        <label for="property-type">Property type:*</label>
-                        <select id="property-type" name="propertyType"><option value="">Please Select</option><option value="single-family">Single Family</option><option value="multi-family">Multi-Family</option><option value="condo">Condo</option><option value="townhouse">Townhouse</option></select>
-                         <div class="error-message hidden">This field is required.</div>
-                    </div>
-                     <div class="form-group"><label for="number-units">Number of units:*</label><input type="number" id="number-units" name="numberUnits" min="1" value="1"><div class="error-message hidden">This field is required.</div></div>
-                 </div>
-                <div class="form-group">
-                    <label for="credit-score">What is your credit score?*</label>
-                    <select id="credit-score" name="creditScore" required>
-                        <option value="">Please Select</option><option value="740+">740 or Higher</option><option value="720">720-739</option><option value="700">700-719</option><option value="680">680-699</option><option value="650">650-679</option><option value="650-">650 or Lower</option>
-                    </select>
-                     <div class="error-message hidden">This field is required.</div>
-                </div>
-                <div class="form-group">
-                    <label for="contact-method">Preferred method of contact:*</label>
-                    <select id="contact-method" name="contactMethod" onchange="toggleContactField()" required>
-                        <option value="">Please Select</option><option value="Call">Call</option><option value="Text">Text</option><option value="WhatsApp">WhatsApp</option><option value="Email">Email</option>
-                    </select>
-                </div>
-                <div id="phone-number-field" class="form-group hidden"><label for="phone-number">Phone Number*</label><input type="tel" id="phone-number" name="phoneNumber" placeholder="(555) 555-5555"><div class="error-message hidden">This field is required.</div></div>
+                <div class="error-message hidden">This field is required.</div>
             </div>
-            <div class="form-section">
-                <h2>Please select a loan product below</h2>
-                <div class="form-group">
-                    <label for="loan-products">Loan Products*</label>
-                    <select id="loan-products" name="loanProducts" required>
-                        <option value="">Please Select</option><option value="5-6-arm">5/6 Adjustable Rate</option><option value="7-6-arm">7/6 Adjustable Rate</option><option value="30-year-fixed">30 Year Fixed</option>
-                    </select>
-                    <div class="error-message hidden">This field is required.</div>
+        </div>
+        <div id="property-details-fields" class="hidden">
+            <div class="form-group">
+                <label for="property-type">Property type:*</label>
+                <div class="select-container">
+                    <select id="property-type" name="propertyType"><option value="">Please Select</option><option value="single-family">Single Family</option><option value="multi-family">Multi-Family</option><option value="condo">Condo</option><option value="townhouse">Townhouse</option></select>
                 </div>
-                <div id="5-6-arm-desc" class="loan-product-description"><h3>5/6 Adjustable Rate</h3><p>This is a 30 year amortization loan. The first 5 years the interest is fixed, after that it becomes adjustable once every 6 months.</p></div>
-                <div id="7-6-arm-desc" class="loan-product-description"><h3>7/6 Adjustable Rate</h3><p>This is a 30 year amortization loan. The first 7 years the interest rate is fixed, after that it becomes adjustable once every 6 months.</p></div>
-                <div id="30-year-fixed-desc" class="loan-product-description"><h3>30 Year Fixed</h3><p>This is a 30 year amortization loan where the interest rate is fixed for the life of the loan & can be used for purchase or a cash out refinance.</p></div>
+                <div class="error-message hidden">This field is required.</div>
             </div>
-            <div style="text-align: right;"><button type="button" class="btn btn-secondary">Save & Continue Later</button><button type="submit" class="btn">Next</button></div>
-        </form>
+            <div class="form-group"><label for="number-units">Number of units:*</label><input type="number" id="number-units" name="numberUnits" min="1" value="1"><div class="error-message hidden">This field is required.</div></div>
+        </div>
+        <div class="form-group">
+            <label for="credit-score">What is your credit score?*</label>
+            <div class="select-container">
+                <select id="credit-score" name="creditScore" required>
+                    <option value="">Please Select</option><option value="740+">740 or Higher</option><option value="720">720-739</option><option value="700">700-719</option><option value="680">680-699</option><option value="650">650-679</option><option value="650-">650 or Lower</option>
+                </select>
+            </div>
+            <div class="error-message hidden">This field is required.</div>
+        </div>
+        <div class="form-group">
+            <label for="contact-method">Preferred method of contact:*</label>
+            <div class="select-container">
+                <select id="contact-method" name="contactMethod" onchange="toggleContactField()" required>
+                    <option value="">Please Select</option><option value="Call">Call</option><option value="Text">Text</option><option value="WhatsApp">WhatsApp</option><option value="Email">Email</option>
+                </select>
+            </div>
+        </div>
+        <div id="phone-number-field" class="form-group hidden"><label for="phone-number">Phone Number*</label><input type="tel" id="phone-number" name="phoneNumber" placeholder="(555) 555-5555"><div class="error-message hidden">This field is required.</div></div>
     </div>
+                <div class="form-section">
+                    <h2>Please select a loan product below</h2>
+                    <div class="form-group">
+                        <label for="loan-products">Loan Products*</label>
+                        <select id="loan-products" name="loanProducts" required>
+                            <option value="">Please Select</option><option value="5-6-arm">5/6 Adjustable Rate</option><option value="7-6-arm">7/6 Adjustable Rate</option><option value="30-year-fixed">30 Year Fixed</option>
+                        </select>
+                        <div class="error-message hidden">This field is required.</div>
+                    </div>
+                    <div id="5-6-arm-desc" class="loan-product-description"><h3>5/6 Adjustable Rate</h3><p>This is a 30 year amortization loan. The first 5 years the interest is fixed, after that it becomes adjustable once every 6 months.</p></div>
+                    <div id="7-6-arm-desc" class="loan-product-description"><h3>7/6 Adjustable Rate</h3><p>This is a 30 year amortization loan. The first 7 years the interest rate is fixed, after that it becomes adjustable once every 6 months.</p></div>
+                    <div id="30-year-fixed-desc" class="loan-product-description"><h3>30 Year Fixed</h3><p>This is a 30 year amortization loan where the interest rate is fixed for the life of the loan & can be used for purchase or a cash out refinance.</p></div>
+                </div>
+                <div style="text-align: right;"><button type="button" class="btn btn-secondary">Save & Continue Later</button><button type="submit" class="btn">Next</button></div>
+            </form>
+        </div>
     <script>
         // The entire script tag is unchanged
         function updateCompletionCounter() {

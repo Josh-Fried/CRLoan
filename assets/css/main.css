@@ -8,14 +8,16 @@
 */
 
 :root {
-	--main-background-color: #f4ece2;
-	--main-background-color: #FFF;
 	--main-background-color: #F9FAFB;
 	--main-text-color: #212931;
 	--secondary-color: #eeeeee;
 	--hover-color: #18bfef;
 	--green-color: #166534;
-	--primary-blue : #3B82F6;
+	--primary-blue : #3B82F6; /* Primary Blue  */
+	--dark-background-color: #a4a8ad; /* Dark Grey */
+	--secondary-blue:  #3B82F6;      /* Blue for progress bar/borders */
+	--accent-dark-blue:     #2563EB;      /* Darker blue for hover/accent */
+	--white:    #FFFFFF;      
 
 	--rough-nav-bar-height: 79px;
 }
@@ -7728,3 +7730,128 @@ body.is-preload #about {
 		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 	}
 }
+
+/* Alex Form  */
+.container {
+	max-width: 800px;
+	margin: 20px auto;
+	padding: 20px;
+	background-color: var(--white);
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.header h1 {
+	font-size: 2em;
+	font-weight: 700;
+	margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+
+.header p {
+	text-align: left;
+	margin-block-start: 1em;
+    margin-block-end: 1em;
+}
+
+.form-section h2 {
+	font-weight: 700;
+	margin-bottom: 15px;
+
+}
+.progress-bar {
+	width: 100%;
+	background-color: #e0e0e0;
+	border-radius: .25rem;
+	margin-bottom: 20px;
+}
+.progress-bar-fill {
+	height: 10px;
+	width: 0%;
+	background-color: var(--secondary-blue);
+	border-radius: .25rem;
+	transition: width 0.4s ease-in-out;
+}
+.loan-product-description {
+	padding: 15px;
+	background-color: var(--white); 
+	border-radius: 4px;
+	margin-top: 20px; 
+	margin-bottom: 15px; 
+	border-left: 4px solid var(--secondary-blue);
+}
+.loan-product-description h3 {
+	font-weight: bold;
+}
+.loan-product-description p {
+	text-align: left;
+}
+.btn {
+	display: inline-block;
+	font-weight: bold;
+	background-color: var(--primary-blue);
+	color: var(--white) !important;
+	padding: 10px 20px;
+	margin: 0 5px;
+	border: 2px solid var(--primary-blue);
+	border-radius: 4px;
+	cursor: pointer;
+	text-align: center;
+	transition: background-color 0.2s, color 0.2s;
+}
+.btn:hover {
+	background-color: var(--accent-dark-blue);
+	border-color: var(--accent-dark-blue);
+}
+.btn-secondary {
+	background-color: transparent;
+	color: var(--primary-blue) !important;
+	border: 2px solid var(--primary-blue);
+}
+.btn-secondary:hover {
+	background-color: var(--primary-blue);
+	color: var(--white) !important;
+}
+.container .header::before {
+	content: '';
+	position: absolute;
+	top: -50px;
+	left: -100px;
+	width: 400px;
+	height: 250px;
+	z-index: -1; /* Puts it behind the "Let's get started" text */
+	
+	/* Use a very faint version of the secondary color for the slash */
+	background-color: var(--secondary-blue);
+	opacity: 0.15;
+	
+	/* This creates the diagonal slant */
+	transform: skewX(-25deg);
+}
+.form-section { margin-bottom: 20px; }
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; margin-bottom: 5px; font-weight: bold; font-size: 1em;}
+.form-group input, .form-group select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;}
+.form-group input:focus, .form-group select:focus { border-color: var(--primary-blue); outline: none; box-shadow: 0 0 0 2px color-mix(in srgb, var(--primary-blue) 20%, transparent); }
+.form-group input.error, .form-group select.error { border-color: #dc3545; }
+.loan-product-description h3 { margin-top: 0; color: var(--main-text-color); }
+.error-message { color: #dc3545; font-size: 0.875em; margin-top: 4px; }
+.alert { padding: 15px; margin-bottom: 20px; border: 1px solid transparent; border-radius: 4px; text-align: left;}
+.alert-warning { color: #856404 !important; background-color: #fff3cd; border-color: #ffeeba; }
+.hidden { display: none; }
+
+.form {
+	background-color: var(--background-color); 
+	margin: 0;
+	padding: 0;
+}
+
+.form * {
+	font-family: Arial, sans-serif !important;
+	color: var(--main-text-color);
+	line-height: 1.6;
+	letter-spacing: 0;
+	text-transform: none;
+}
+
