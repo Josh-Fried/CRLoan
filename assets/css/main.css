@@ -7732,7 +7732,7 @@ body.is-preload #about {
 }
 
 /* Alex Form  */
-.container {
+.form-container {
 	max-width: 800px;
 	margin: 20px auto;
 	padding: 20px;
@@ -7740,6 +7740,11 @@ body.is-preload #about {
 	border-radius: 8px;
 	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+
+.form-container p {
+	color: var(--main-text-color);
+}
+
 .header h1 {
 	font-size: 2em;
 	font-weight: 700;
@@ -7750,6 +7755,7 @@ body.is-preload #about {
 }
 
 .header p {
+	color: var(--main-text-color);
 	text-align: left;
 	margin-block-start: 1em;
     margin-block-end: 1em;
@@ -7758,7 +7764,6 @@ body.is-preload #about {
 .form-section h2 {
 	font-weight: 700;
 	margin-bottom: 15px;
-
 }
 .progress-bar {
 	width: 100%;
@@ -7813,7 +7818,7 @@ body.is-preload #about {
 	background-color: var(--primary-blue);
 	color: var(--white) !important;
 }
-.container .header::before {
+.form-container .header::before {
 	content: '';
 	position: absolute;
 	top: -50px;
@@ -7849,9 +7854,24 @@ body.is-preload #about {
 
 .form * {
 	font-family: Arial, sans-serif !important;
-	color: var(--main-text-color);
+	/* color: var(--main-text-color); */
 	line-height: 1.6;
 	letter-spacing: 0;
 	text-transform: none;
+}
+
+/* Back Arrow  */
+.back-arrow span {
+  position: fixed;
+  color: var(--main-text-color);
+  top: 20px;
+  left: 40px;
+  font-size: 1.5em; /* Adjust size as needed */
+  text-decoration: none;
+  z-index: 1000; /* Ensures it stays on top of other content */
+}
+
+.back-arrow span:hover {
+  color: #007bff; /* Optional: change color on hover */
 }
 
