@@ -7875,3 +7875,104 @@ body.is-preload #about {
   color: #007bff; /* Optional: change color on hover */
 }
 
+/* --- Our Story Section (from screenshot for context) --- */
+#our-story {
+	display: flex;
+	align-items: center;
+	gap: 3em;
+	padding-bottom: 3em;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+#our-story .story-text {
+	flex: 1;
+}
+
+#our-story .story-text p {
+	color: var(--main-text-color);
+}
+
+#our-story .story-image {
+	flex: 1;
+	max-width: 500px;
+}
+
+#our-story .story-image img {
+	width: 100%;
+	border-radius: 12px;
+	box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* --- NEW Meet the Team Section --- */
+#meet-the-team {
+	padding-top: 3em;
+}
+
+#meet-the-team h2 {
+	text-align: left; /* Align heading to the left like "Our Story" */
+}
+
+.team-container {
+	display: flex;
+	flex-direction: column;
+	gap: 2.5em; /* Space between the two team members */
+	margin-top: 2em;
+}
+
+.team-member {
+	display: flex;
+	align-items: flex-start; /* Aligns items to the top */
+	gap: 2em; /* Space between photo and info */
+}
+
+.team-member-photo {
+	flex-shrink: 0; /* Prevents the photo from shrinking */
+}
+
+.team-member-photo img {
+	width: 150px; /* Adjust size as needed */
+	height: 150px;
+	border-radius: 50%; /* Makes the image circular */
+	object-fit: cover; 
+	/* object-fit: contain; */
+	border: 4px solid #fff;
+	box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.team-member-info {
+	flex-grow: 1; /* Allows the info section to take up remaining space */
+}
+
+.team-member-info h3 {
+	font-size: 1.5em;
+	font-weight: 600;
+	color: #0A2342;
+	margin: 0 0 0.25em 0;
+}
+
+.team-member-info h4 {
+	font-size: 1em;
+	font-weight: 600;
+	color: #007bff; /* A highlight color */
+	margin: 0 0 0.75em 0;
+}
+
+.team-member-info p {
+	font-size: 0.95em;
+	color: #555;
+	margin: 0;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+	#our-story, .team-member {
+		flex-direction: column;
+		text-align: center;
+		align-items: center;
+	}
+
+	.team-member-info {
+		text-align: center;
+	}
+}
+
