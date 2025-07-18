@@ -7968,17 +7968,26 @@ body.is-preload #about {
 }
 
 .team-member-photo {
-	flex-shrink: 0; /* Prevents the photo from shrinking */
+	flex-shrink: 0;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%; /* Make the container the circle */
+	overflow: hidden; /* Hide parts of the image outside the circle */
+	background-color: #f0f0f0; /* Background for transparent images */
+	border: 4px solid #fff;
+	box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .team-member-photo img {
-	width: 150px; /* Adjust size as needed */
-	height: 150px;
-	border-radius: 50%; /* Makes the image circular */
-	object-fit: cover; 
-	/* object-fit: contain; */
-	border: 4px solid #fff;
-	box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+	width: 100%; /* Image fills the frame's width */
+	height: auto; /* Height adjusts automatically to keep dimensions */
+	display: block;
+}
+
+.team-member-photo img.skinny-fix {
+	object-fit: contain; /* This "zooms out" the image to fit */
+	background-color: #f0f0f0; /* Optional: adds a background to the empty space */
+	background-color: #000000;
 }
 
 .team-member-info {
