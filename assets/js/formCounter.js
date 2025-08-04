@@ -58,7 +58,7 @@ function updateDynamicFields() {
     setFieldsRequired('purchase-fields', false);
     setFieldsRequired('refinance-fields', false);
     setFieldsRequired('property-details-fields', false);
-    if (selectedValue === 'purchase') {
+    if (selectedValue === 'purchase' || selectedValue === 'construction') {
         purchaseFields.classList.remove('hidden');
         propertyDetailsFields.classList.remove('hidden');
         setFieldsRequired('purchase-fields', true);

@@ -423,3 +423,41 @@ if ($desktopNavList.length > 0 && $toggleAppendTarget.length > 0) {
         }
     
 })(jQuery);
+
+
+/* --- Code to handle final form submission --- */
+$(document).ready(function() {
+    // Select the form by its ID and listen for the 'submit' event
+    $('#loan-application-form').on('submit', function(event) {
+        
+        // 1. Prevent the default form submission which reloads the page
+        event.preventDefault();
+
+        // FOR LATER USE: When you're ready to send data to a CRM, you can get all
+        // the form data easily like this:
+        // const formData = $(this).serialize();
+        // console.log("Form data to be sent:", formData); 
+        // You would then use fetch() or $.ajax() to send `formData` to your server.
+
+        // 2. Find the main container of the form
+        const formContainer = $('.form-container');
+
+        // 3. Define the HTML for your success message
+        // We use the same 'header' class to maintain a consistent look.
+        const successMessageHtml = `
+            <div class="header" style="text-align:center; justify-self:center; justify-items:center; padding: 5em 0;">
+                <h1>Submission Complete!</h1>
+                <p>Our team will be reaching out to you shortly.</p>
+            </div>
+        `;
+
+        // 4. Replace the entire content of the form container with the success message
+        formContainer.html(successMessageHtml);
+
+        // 5. (Optional but good UX) Scroll the user to the top of the new message
+        // The -100 is an offset to account for your sticky navigation bar.
+        $('html, body').animate({
+            scrollTop: formContainer.offset().top - 100
+        }, 500);
+    });
+});

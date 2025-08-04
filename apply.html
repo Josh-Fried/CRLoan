@@ -47,10 +47,11 @@
                 <div class="progress-bar"><div class="progress-bar-fill"></div></div>
                 <p id="completion-counter" style="text-align:center;">Required Fields Complete: 0 / 0</p>
                 <div class="alert alert-warning">PLEASE NOTE THAT IF YOU EXIT OUT OF THIS FORM WITHOUT SAVING, ALL INFORMATION ENTERED WILL BE LOST & YOU WILL HAVE TO START OVER</div>
-                <form id="loan-application-form">
+                <form id="loan-application-form" novalidate>
                     <div class="form-section">
                         <p class="alert alert-warning">In order to save this application and access it at a later time you need to select the 'Save & Continue Later' button at the bottom of any page. We need a valid email to send a link that will direct you back to this application. Please enter a valid email below and click 'Verify Email'.</p>
-                        <div class="form-group"><label for="guarantor-email">Guarantor Email*</label><input type="email" id="guarantor-email" name="guarantorEmail" placeholder="example@example.com" required><div class="error-message hidden">This field is required.</div></div>
+                        <div class="form-group">
+                            <label for="guarantor-email">Guarantor Email*</label><input type="email" id="guarantor-email" name="guarantorEmail" placeholder="example@example.com" required><div class="error-message hidden">This field is required.</div></div>
                         <button class="btn" type="button" onclick="verifyEmail()">Verify Email</button>
                     </div>
                     <div class="form-section">
@@ -58,14 +59,13 @@
                     <label for="interest">I am interested in:*</label>
                     <div class="select-container">
                         <select id="interest" name="interest" onchange="updateDynamicFields()" required>
-                            <option value="">Please Select</option><option value="purchase">Purchase</option><option value="refinance">Refinance</option><option value="cash-outRefinance">Cash-Out Refinance</option>
+                            <option value="">Please Select</option><option value="purchase">Purchase</option><option value="construction">Construction</option><option value="refinance">Refinance</option><option value="cash-outRefinance">Cash-Out Refinance</option>
                         </select>
                     </div>
                     <div class="error-message hidden">This field is required.</div>
                 </div>
                 <div id="purchase-fields" class="hidden">
-                    <div class="form-group"><label for="purchase-price">Estimated Property Purchase Price $*</label><input type="text" id="purchase-price" name="purchasePrice"><div class="error-message hidden">This field is required.</div></div>
-                    <div class="form-group"><label for="down-payment">Down Payment $*</label><input type="text" id="down-payment" name="downPayment"><div class="error-message hidden">This field is required.</div></div>
+                    <div class="form-group"><label for="loan-amount">Requested Loan Amount $*</label><input type="text" id="purchase-price" name="purchasePrice"><div class="error-message hidden">This field is required.</div></div>
                 </div>
                 <div id="refinance-fields" class="hidden">
                     <div class="form-group"><label for="home-value">Estimate Value of Your Home or Lot $*</label><input type="text" id="home-value" name="homeValue"><div class="error-message hidden">This field is required.</div></div>
@@ -73,7 +73,7 @@
                     <div class="form-group">
                         <label for="original-purchase">How did you originally purchase this home or lot?*</label>
                         <div class="select-container">
-                            <select id="original-purchase" name="originalPurchase"><option value="">Please Select</option><option value="cash">Cash</option><option value="loan">Loan</option></select>
+                            <select id="original-purchase" name="originalPurchase"><option value="">Please Select</option><option value="cash">Cash</option><option value="finance">Finance</option></select>
                         </div>
                         <div class="error-message hidden">This field is required.</div>
                     </div>
@@ -82,13 +82,13 @@
                     <div class="form-group">
                         <label for="property-type">Property type:*</label>
                         <div class="select-container">
-                            <select id="property-type" name="propertyType"><option value="">Please Select</option><option value="single-family">Single Family</option><option value="multi-family">Multi-Family</option><option value="condo">Condo</option><option value="townhouse">Townhouse</option></select>
+                            <select id="property-type" name="propertyType"><option value="">Please Select</option><option value="single-family">Single Family</option><option value="condo">Condo</option><option value="townhouse">Townhouse</option></select>
                         </div>
                         <div class="error-message hidden">This field is required.</div>
                     </div>
-                    <div class="form-group"><label for="number-units">Number of units:*</label><input type="number" id="number-units" name="numberUnits" min="1" value="1"><div class="error-message hidden">This field is required.</div></div>
+                    <!-- <div class="form-group"><label for="number-units">Number of units:*</label><input type="number" id="number-units" name="numberUnits" min="1" value="1"><div class="error-message hidden">This field is required.</div></div> -->
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="credit-score">What is your credit score?*</label>
                     <div class="select-container">
                         <select id="credit-score" name="creditScore" required>
@@ -96,7 +96,7 @@
                         </select>
                     </div>
                     <div class="error-message hidden">This field is required.</div>
-                </div>
+                </div> -->
                 <div class="form-group">
                     <label for="contact-method">Preferred method of contact:*</label>
                     <div class="select-container">
