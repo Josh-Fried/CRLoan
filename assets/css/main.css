@@ -7243,6 +7243,35 @@ body.is-preload #about {
 	border-width: 20px;
 }
 
+.second-prequal-button {
+	/* Background and Text Color */
+	background-color: #89CFF0; /* A nice light blue */
+	background-color: var(--primary-blue);
+	color: white;
+
+	/* Shape and Size */
+	border: none;
+	border-radius: 50px; /* This creates the oval shape */
+	padding: 12px 35px; /* Adjusts the height and width. More horizontal padding makes it longer. */
+	
+	/* Font and Text */
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	white-space: nowrap; /* Prevents the text from wrapping */
+
+	/* Effects */
+	cursor: pointer; /* Changes the cursor to a pointer on hover */
+	transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effects */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+	text-transform: uppercase;
+	 
+	/* Wyatt's Additions */
+	font-size: 1em;
+	border-style: double;
+	border-width: 20px;
+}
+
 .main-loan-fontsize {
 	font-size: 5em;
 }
