@@ -7236,6 +7236,15 @@ body.is-preload #about {
 	transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effects */
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 	text-transform: uppercase;
+	 
+	/* Wyatt's Additions */
+	font-size: 3em;
+	border-style: double;
+	border-width: 20px;
+}
+
+.main-loan-fontsize {
+	font-size: 5em;
 }
 
 /* Hover effect to make the button interactive */
@@ -7250,7 +7259,7 @@ body.is-preload #about {
 	max-width: 1280px;
 	margin-left: auto;
 	margin-right: auto;
-	padding: 48px 16px; 
+	padding: 5rem 4rem; /* padding: 48px 16px;  */
 }
 
 /* Main Layout Grid */
@@ -7265,7 +7274,7 @@ body.is-preload #about {
 .text-content {
 	flex: 2;
 	min-width: 300px;
-	text-align: left;
+	text-align: center; /* text-align: left; */
 }
 
 .text-content h2 {
@@ -7292,7 +7301,7 @@ body.is-preload #about {
 .features-grid {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	/* gap: 32px; */
+	gap: 32px;
 }
 
 /* Grid Item Styling */
@@ -7355,12 +7364,15 @@ body.is-preload #about {
 
 .feature-item p {
 	margin: 0;
-	font-size: .75rem;
+	font-size: 1rem;
 	color: #4B5563;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
+	.prequal-button {
+		font-size: 2rem;
+	}
 	.main-layout {
 		flex-direction: column;
 		gap: 48px;
@@ -7371,17 +7383,24 @@ body.is-preload #about {
 }
 
 @media (max-width: 640px) {
+	.main-loan-fontsize {
+		font-size: 2rem;
+	}
 	.features-grid {
-		grid-template-columns: 1fr;
+		grid-template-columns: 23fr;
 	}
 	.text-content h2 {
-		font-size: 1.875rem;
+		font-size: 2rem;
 		line-height: 2.25rem;
+	}
+	.prequal-button {
+		font-size: 2rem;
 	}
 	#why-work-with-us {
 		padding-top: 32px;
 		padding-bottom: 32px;
 	}
+	
 }
 
 /* Our Process */
