@@ -7236,44 +7236,6 @@ body.is-preload #about {
 	transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effects */
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 	text-transform: uppercase;
-	 
-	/* Wyatt's Additions */
-	font-size: 3em;
-	border-style: double;
-	border-width: 20px;
-}
-
-.second-prequal-button {
-	/* Background and Text Color */
-	background-color: #89CFF0; /* A nice light blue */
-	background-color: var(--primary-blue);
-	color: white;
-
-	/* Shape and Size */
-	border: none;
-	border-radius: 50px; /* This creates the oval shape */
-	padding: 12px 35px; /* Adjusts the height and width. More horizontal padding makes it longer. */
-	
-	/* Font and Text */
-	font-size: 16px;
-	font-weight: bold;
-	text-align: center;
-	white-space: nowrap; /* Prevents the text from wrapping */
-
-	/* Effects */
-	cursor: pointer; /* Changes the cursor to a pointer on hover */
-	transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effects */
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-	text-transform: uppercase;
-	 
-	/* Wyatt's Additions */
-	font-size: 1em;
-	border-style: double;
-	border-width: 20px;
-}
-
-.main-loan-fontsize {
-	font-size: 5em;
 }
 
 /* Hover effect to make the button interactive */
@@ -7288,7 +7250,7 @@ body.is-preload #about {
 	max-width: 1280px;
 	margin-left: auto;
 	margin-right: auto;
-	padding: 5rem 4rem; /* padding: 48px 16px;  */
+	padding: 48px 16px; 
 }
 
 /* Main Layout Grid */
@@ -7303,7 +7265,7 @@ body.is-preload #about {
 .text-content {
 	flex: 2;
 	min-width: 300px;
-	text-align: center; /* text-align: left; */
+	text-align: left;
 }
 
 .text-content h2 {
@@ -7330,7 +7292,7 @@ body.is-preload #about {
 .features-grid {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	gap: 32px;
+	/* gap: 32px; */
 }
 
 /* Grid Item Styling */
@@ -7393,15 +7355,12 @@ body.is-preload #about {
 
 .feature-item p {
 	margin: 0;
-	font-size: 1rem;
+	font-size: .75rem;
 	color: #4B5563;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
-	.prequal-button {
-		font-size: 2rem;
-	}
 	.main-layout {
 		flex-direction: column;
 		gap: 48px;
@@ -7412,24 +7371,17 @@ body.is-preload #about {
 }
 
 @media (max-width: 640px) {
-	.main-loan-fontsize {
-		font-size: 2rem;
-	}
 	.features-grid {
-		grid-template-columns: 23fr;
+		grid-template-columns: 1fr;
 	}
 	.text-content h2 {
-		font-size: 2rem;
+		font-size: 1.875rem;
 		line-height: 2.25rem;
-	}
-	.prequal-button {
-		font-size: 2rem;
 	}
 	#why-work-with-us {
 		padding-top: 32px;
 		padding-bottom: 32px;
 	}
-	
 }
 
 /* Our Process */
