@@ -9,6 +9,20 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
+/* Main container to hold the content */
+.main-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;    /* Center items horizontally */
+    gap: 2rem;              /* Space between the title and the buttons */
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.25rem;
+    color: #1f2937;
+}
+
 /* Container for the buttons */
 .button-container {
     display: flex;
@@ -53,4 +67,3 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
-
