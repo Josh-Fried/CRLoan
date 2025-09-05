@@ -33,9 +33,10 @@ $(document).ready(function() {
         dots: false,            // Show navigation dots
         arrows: true,          // Show navigation arrows
         focusOnSelect: true,   // Center the slide when it's clicked
-        infinite: true,        // Loop the slides
         speed: 600,
         adaptiveHeight: true,
+        autoplay: true,          // Enable autoplay
+        autoplaySpeed: 3000,     // Set autoplay speed to 3 seconds
         responsive: [
             {
                 // --- NEW! STANDARD LAPTOP (1440px and below) ---

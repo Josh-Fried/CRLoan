@@ -1,0 +1,56 @@
+/* General Body Styles */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f3f4f6; /* A light gray background */
+    font-family: 'Inter', sans-serif;
+}
+
+/* Container for the buttons */
+.button-container {
+    display: flex;
+    gap: 1.5rem; /* Space between the buttons */
+}
+
+/* Base Button Style */
+.btn {
+    padding: 1rem 2.5rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    text-align: center;
+}
+
+/* Style 1 Button */
+.style-one {
+    background-color: #3b82f6; /* Blue */
+    color: #ffffff;
+    border: 2px solid transparent;
+}
+
+.style-one:hover {
+    background-color: #2563eb; /* Darker Blue */
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+/* Style 2 Button */
+.style-two {
+    background-color: #ffffff;
+    color: #1f2937; /* Dark Gray */
+    border: 2px solid #e5e7eb; /* Light Gray Border */
+}
+
+.style-two:hover {
+    background-color: #f9fafb; /* Off-white */
+    border-color: #d1d5db; /* Gray Border */
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
