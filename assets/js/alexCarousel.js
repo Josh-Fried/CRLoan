@@ -37,6 +37,8 @@ $(document).ready(function() {
         adaptiveHeight: true,
         autoplay: true,          // Enable autoplay
         autoplaySpeed: 4000,     // Set autoplay speed to 3 seconds
+        pauseOnHover: false,
+        pauseOnFocus: false,
         responsive: [
             {
                 // --- NEW! STANDARD LAPTOP (1440px and below) ---

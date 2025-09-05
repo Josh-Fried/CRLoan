@@ -8,7 +8,8 @@ $(document).ready(function(){
         asNavFor: '.slider-nav',
         autoplay: true,
         autoplaySpeed: 4000,
-        pauseOnHover: true
+        pauseOnHover: false,
+        pauseOnFocus: false,
     });
 
     // Initialize the navigation tiles slider
